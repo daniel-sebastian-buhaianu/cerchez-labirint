@@ -8,10 +8,10 @@ Soricelul se poate deplasa in labirint doar pe culoare. La un pas el poate ajung
 
 Exemplu:
 * C = 1, n = 5, m = 7
-* /# #   ##
+* \# #   ##
 *    S# #
-*      /#
-* /# # # C
+*      \#
+* \# # # C
 *       #
 
 Pentru cerinta 1, se va afisa: 8
