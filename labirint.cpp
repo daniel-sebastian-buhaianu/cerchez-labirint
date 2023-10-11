@@ -13,11 +13,11 @@ struct pozitie { int x, y; };
 int dl[] = {-1, 0, 1, 0};
 int dc[] = {0, 1, 0, -1};
 int a[DMAX+2][DMAX+2];
-pozitie coada[DMAX*DMAX];
+pozitie coada[DMAX*DMAX], stv[DMAX];
 
 int main()
 {
-	int n, m, i, j, inc, sf, k;
+	int n, m, i, j, inc, sf, k, vf;
 	char c;
 	pozitie ps, pc, p, v;
 
@@ -60,6 +60,7 @@ int main()
 	fin.close();
 
 	// bordez matricea
+
 	for (i = 0; i <= m+1; i++)
 	{
 		a[0][i] = a[n+1][i] = -1;
@@ -72,6 +73,7 @@ int main()
 
 	// aplic algoritmul lui Lee pentru a calcula lungimea minima
 	// de la pozitia soricelului pana la pozitia bucatei de cascaval
+
 	inc = sf = 0, coada[sf] = ps;
 
 	a[ps.x][ps.y] = 1;
@@ -96,7 +98,40 @@ int main()
 	
 	// afisez lungimea minima
 	fout << a[pc.x][pc.y] << '\n';
-			
+
+	// reconstituiesc un traseu de lungime minima
+
+	vf = 0, stv[vf] = pc;
+
+	p = stv[vf];
+	
+	do
+	{
+		for (k = 0; k < ND; k++)
+		{
+			v.x = p.x + dl[k];
+			v.y = p.y + dc[k];
+
+			if (a[v.x][v.y]+1 == a[p.x][p.y])
+			{
+				stv[++vf] = v;
+
+				break;
+			}
+		}
+
+		p = stv[vf];
+	}
+	while (p.x != ps.x || p.y != ps.y);
+
+	// afisez traseul
+	while (vf >= 0)
+	{
+		p = stv[vf--];
+
+		fout << "(" << p.x << "," << p.y << ") ";
+	}
+
 	fout.close();
 
 	return 0;
