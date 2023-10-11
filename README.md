@@ -5,3 +5,14 @@ Soricelul se poate deplasa in labirint doar pe culoare. La un pas el poate ajung
 
 1. Scrieti un program care sa determine lungimea unui drum de lungime minima prin care soricelul poate sa ajunga la bucata de cascaval.
 2. Modificati programul astfel incat sa reconstituiti un drum de lungime minima prin care soricelul poate sa ajunga la cascaval.
+
+Exemplu:
+* C = 1, n = 5, m = 7
+* ##   ##
+*    S# #
+*      #
+* # # # C
+*       #
+
+Pentru cerinta 1, se va afisa: 8
+Pentru cerinta 2, se va afisa: (2,4) (3,4) (4,4) (4,5) (4,6) (3,6) (3,7)
