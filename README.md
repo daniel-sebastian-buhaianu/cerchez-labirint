@@ -11,13 +11,13 @@ Exemplu:
 
 \##   ##
 
-   S# #
+    S# #
 
-     #
+      \#
      
 \# # # C
 
-      #
+      \#
 
 Pentru cerinta 1, se va afisa: 8
 Pentru cerinta 2, se va afisa: (2,4) (3,4) (4,4) (4,5) (4,6) (3,6) (3,7)
